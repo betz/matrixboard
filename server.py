@@ -126,7 +126,6 @@ with open("config.yml", 'r') as ymlfile:
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING)
-    print(cfg)
     _thread.start_new_thread(main, (cfg['server'], cfg['username'], cfg['password']))
     run(host='0.0.0.0', port=1337)
 
