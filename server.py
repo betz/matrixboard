@@ -124,6 +124,6 @@ def main(host, username, password):
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING)
     _thread.start_new_thread(main, ("http://matrix.hackerspaces.be:8008", "matrixboard", "CLUBMATE2010"))
-    run(host='localhost', port=1337)
+    run(host='0.0.0.0', port=1337)
 
 
