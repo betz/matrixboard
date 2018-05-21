@@ -7,6 +7,7 @@ import logging
 import time
 import sqlite3
 import _thread
+import yaml
 
 from matrix_client.client import MatrixClient
 from matrix_client.client import MatrixHttpApi
@@ -120,10 +121,13 @@ def main(host, username, password):
     while True:
         time.sleep(30)
 
+with open("config.yml", 'r') as ymlfile:
+    cfg = yaml.load(ymlfile)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING)
-    _thread.start_new_thread(main, ("http://matrix.hackerspaces.be:8008", "matrixboard", "CLUBMATE2010"))
+    print(cfg)
+    _thread.start_new_thread(main, (cfg['server'], cfg['username'], cfg['password']))
     run(host='0.0.0.0', port=1337)
 
 
