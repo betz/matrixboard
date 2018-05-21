@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-import sys
+import sys, os
 import logging
 import time
 import sqlite3
@@ -15,6 +15,8 @@ from matrix_client.api import MatrixRequestError
 from requests.exceptions import MissingSchema
 from datetime import date, datetime
 from bottle import request, route, run, template
+
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 
 @route('/<room>')
@@ -121,7 +123,8 @@ def main(host, username, password):
     while True:
         time.sleep(30)
 
-with open("config.yml", 'r') as ymlfile:
+
+with open(os.path.join(__location__, 'config.yml'), 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
 if __name__ == '__main__':
