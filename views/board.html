@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    a {
+        text-decoration: none !important;
+    }
+</style>
+<body class="w3-{{color}}">
+<div class="w3-container">
+    <a href="{{riot}}/#/room/{{room}}" target="_blank"><h3>{{roomname}}</h3>
+
+    % for line in lines:
+    <p><strong>{{line['sender']}}</strong>: {{line['message']}}<p/>
+    % end
+    </a>
+</div>
+
+</body>
+</html>
