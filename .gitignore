@@ -1,1 +1,7 @@
 config.yml
+
+.idea
+
+bin
+include
+lib
