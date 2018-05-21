@@ -42,7 +42,7 @@ def board(room):
         'roomname': roomname.get('name'),
         'lines': lines,
         'color': request.query.get('color'),
-        'riot': request.query.get('riot') or 'https://riot.im/app',
+        'riot': request.query.get('riot') or 'https://ptt.hackerspaces.be',
         'room': room
     }
     return template('board.html', tvars)
